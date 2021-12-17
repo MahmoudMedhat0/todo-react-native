@@ -35,8 +35,10 @@ const todoSlice = createSlice({
         completed: action.payload.completed,
       };
       state[index] = upadtedTodo;
+      console.log(upadtedTodo)
     },
     toggleTodo: (state, action) => {
+      console.log(action.payload)
       const index = state.findIndex((todo) => todo.id === action.payload.id);
       state[index].completed = action.payload.completed;
     },

@@ -19,13 +19,19 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <Provider store={store}>
-       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} />
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{
+              headerShown: false,
+            }}>
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            
+          />
           <Stack.Screen name="Add" component={AddTodo} />
           <Stack.Screen name="Edit" component={EditTodo} />
         </Stack.Navigator>
-      </NavigationContainer> 
+      </NavigationContainer>
     </Provider>
   );
 };
